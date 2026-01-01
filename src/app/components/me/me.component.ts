@@ -45,11 +45,11 @@ export class MeComponent implements OnInit {
     this.userService
       .delete(this.sessionService.sessionInformation!.id.toString())
       .pipe(takeUntil(this.destroy$))
-      .subscribe((_) => {
+      .subscribe({complete: () => {
         this.matSnackBar.open("Your account has been deleted !", 'Close', { duration: 3000 });
         this.sessionService.logOut();
         this.router.navigate(['/']);
-      })
+      }});
   }
 
 }

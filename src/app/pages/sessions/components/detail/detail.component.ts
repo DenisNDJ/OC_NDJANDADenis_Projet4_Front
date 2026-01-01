@@ -59,11 +59,10 @@ export class DetailComponent implements OnInit, OnDestroy {
     this.sessionApiService
       .delete(this.sessionId)
       .pipe(takeUntil(this.destroy$))
-      .subscribe((_: any) => {
+      .subscribe({complete: () => {
           this.matSnackBar.open('Session deleted !', 'Close', { duration: 3000 });
           this.router.navigate(['sessions']);
-        }
-      );
+      }});
   }
 
   public participate(): void {

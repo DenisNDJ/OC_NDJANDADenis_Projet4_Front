@@ -66,7 +66,7 @@ export class RegisterComponent implements OnInit, OnDestroy{
 
   public submit(): void {
     const registerRequest = this.form.value as RegisterRequest;
-    this.authService.register(registerRequest).pipe(takeUntil(this.destroy$)).subscribe({
+    this.authService.register(registerRequest).subscribe({
         next: (_: void) => this.router.navigate(['/login']),
         error: _ => this.onError = true,
       }
