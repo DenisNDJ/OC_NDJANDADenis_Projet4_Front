@@ -4,7 +4,7 @@
     @if ($isLogged() | async) {
     <div>
       <span routerLink="sessions" class="link">Sessions</span>
-      <span routerLink="me" class="link">Account</span>
+      <span routerLink="me" class="link" data-cy="account_nav">Account</span>
       <span (click)="logout()" class="link">Logout</span>
     </div>
   } @else {

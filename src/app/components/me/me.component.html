@@ -11,20 +11,20 @@
     <mat-card-content>
       @if (user) {
       <div fxLayout="column" fxLayoutAlign="start center">
-        <p>Name: {{ user.firstName }} {{ user.lastName | uppercase }}</p>
-        <p>Email: {{ user.email }}</p>
-        @if (user.admin) {<p class="my2">You are admin</p>}
+        <p data-cy="name_me">Name: {{ user.firstName }} {{ user.lastName | uppercase }}</p>
+        <p data-cy="email_me">Email: {{ user.email }}</p>
+        @if (user.admin) {<p class="my2" data-cy="admin_me">You are admin</p>}
         <div fxLayout="column" class="my2" fxLayoutAlign="center center">
           <p>Delete my account:</p>
-          <button mat-raised-button color="warn" (click)="delete()">
+          <button mat-raised-button color="warn" (click)="delete()" data-cy="deleteBtn_me">
             <mat-icon>delete</mat-icon>
-            <span class="ml1">Detail</span>
+            <span class="ml1">Delete</span>
           </button>
         </div>
         <div fxLayoutAlign="space-between center" class="p2 w100">
 
-          <p><i>Create at: </i> {{ user.createdAt | date: 'longDate'}}</p>
-          <p><i>Last update: </i> {{ user.updatedAt| date: 'longDate'}}</p>
+          <p data-cy="createdAt_me"><i>Create at: </i> {{ user.createdAt | date: 'longDate'}}</p>
+          <p data-cy="updateAt_me"><i>Last update: </i> {{ user.updatedAt| date: 'longDate'}}</p>
         </div>
       </div>
     }

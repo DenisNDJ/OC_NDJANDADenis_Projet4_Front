@@ -3,14 +3,14 @@
     <mat-card-header fxLayout="row" fxLayoutAlign="space-between center">
       <mat-card-title class="m0">Rentals available</mat-card-title>
       @if (user!.admin) {
-      <button mat-raised-button color="primary" routerLink="create">
+      <button mat-raised-button color="primary" routerLink="create" data-cy="session_create">
         <mat-icon>add</mat-icon>
         <span class="ml1">Create</span>
       </button>}
     </mat-card-header>
     <div class="items mt2" fxLayout="row wrap" fxLayout.lt-md="column">
       @for (session of (sessions$ | async); track session) {
-      <mat-card class="item" fxFlex>
+      <mat-card data-cy="lst_sessions" class="item" fxFlex>
         <mat-card-header>
           <mat-card-title>{{ session.name }}</mat-card-title>
           <mat-card-subtitle>
@@ -31,7 +31,8 @@
             <span class="ml1">Detail</span>
           </button>
           @if (user!.admin) {
-          <button mat-raised-button color="primary"
+          <button mat-raised-button color="primary" 
+                  data-cy="session_edit"
                   [routerLink]="['update',session.id]">
             <mat-icon>edit</mat-icon>
             <span class="ml1">Edit</span>
