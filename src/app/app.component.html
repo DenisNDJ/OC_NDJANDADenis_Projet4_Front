@@ -5,12 +5,12 @@
     <div>
       <span routerLink="sessions" class="link">Sessions</span>
       <span routerLink="me" class="link" data-cy="account_nav">Account</span>
-      <span (click)="logout()" class="link">Logout</span>
+      <span (click)="logout()" class="link" data-cy="logout_nav">Logout</span>
     </div>
   } @else {
       <div>
-        <a routerLink="/login" routerLinkActive="active" class="link">Login</a>
-        <a routerLink="/register" routerLinkActive="active" class="link">Register</a>
+        <a routerLink="/login" routerLinkActive="active" class="link" data-cy="login_nav">Login</a>
+        <a routerLink="/register" routerLinkActive="active" class="link" data-cy="register_nav">Register</a>
       </div>
     }
   </mat-toolbar>

@@ -26,7 +26,7 @@ describe('Sessions tests', () => {
         'GET',
         '/api/user/1',
         {
-            fixture: 'user.json',
+            fixture: 'userAdmin.json',
         },).as("userRequest");
 
         cy.visit('http://localhost:4200/login');
@@ -40,7 +40,7 @@ describe('Sessions tests', () => {
         
         cy.get('[data-cy="account_nav"]').click();
 
-        cy.fixture('user.json').then((user)=>{
+        cy.fixture('userAdmin.json').then((user)=>{
             cy.get('[data-cy="name_me"]').should('contain',user.firstName);
             cy.get('[data-cy="name_me"]').should('contain',user.lastName);
             cy.get('[data-cy="email_me"]').should('contain',user.email);

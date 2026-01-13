@@ -1,0 +1,9 @@
+{
+    "id": 1,
+    "lastName": "ADMIN",
+    "firstName": "Admin",
+    "email": "yoga@studio.com",
+    "createdAt": "2025-12-31T00:00:00",
+    "updatedAt": "2025-12-31T00:00:00",
+    "admin": true
+}
