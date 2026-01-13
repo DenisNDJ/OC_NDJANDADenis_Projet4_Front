@@ -1,0 +1,6 @@
+import './login.cy.js'
+import './me.cy.js'
+import './not_found.cy.js'
+import './register.cy.js'
+import './session.cy.js'
+import './user.cy.js'
