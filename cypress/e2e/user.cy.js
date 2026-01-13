@@ -37,6 +37,13 @@ describe('Users tests', () => {
             fixture: 'teacher1.json',
         },);
 
+        cy.intercept(
+        'GET',
+        '/api/teacher/2',
+        {
+            fixture: 'teacher1.json',
+        },);
+
         cy.visit('http://localhost:4200/login')
         cy.get('#mat-input-0').clear();
         cy.get('#mat-input-1').clear();
