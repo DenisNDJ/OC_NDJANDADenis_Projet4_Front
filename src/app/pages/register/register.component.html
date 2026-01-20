@@ -18,8 +18,8 @@
                     <input matInput placeholder="Password" formControlName="password">
                 </mat-form-field>
             </mat-card-content>
-            <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Submit</button>
-            @if (onError) {<span class="error ml2">An error occurred</span>}
+            <button id="registerBtn" color="primary" type="submit" [disabled]="form.invalid">Submit</button>
+            @if (onError) {<span id='errorMes_register' class="error ml2">An error occurred</span>}
         </form>
     </mat-card>
 </div>

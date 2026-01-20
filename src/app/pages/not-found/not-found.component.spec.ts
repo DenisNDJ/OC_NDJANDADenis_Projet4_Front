@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { expect } from '@jest/globals';
 
 import { NotFoundComponent } from './not-found.component';
+import { By } from '@angular/platform-browser';
 
 describe('NotFoundComponent', () => {
   let component: NotFoundComponent;
@@ -9,7 +10,7 @@ describe('NotFoundComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NotFoundComponent ]
+      imports: [ NotFoundComponent ]
     })
     .compileComponents();
 
@@ -20,5 +21,11 @@ describe('NotFoundComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should check the page text', () => {
+    const pageElement: HTMLElement = fixture.nativeElement;
+    const h1Element = pageElement.querySelector('h1')!;
+    expect(h1Element.textContent).toContain('Page not found !');
   });
 });

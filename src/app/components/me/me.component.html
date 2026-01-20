@@ -2,7 +2,7 @@
   <mat-card>
     <mat-card-title>
       <div fxLayout="row" fxLayoutAlign="start center">
-        <button mat-icon-button (click)="back()">
+        <button mat-icon-button (click)="back()" id="backBtn_me">
           <mat-icon>arrow_back</mat-icon>
         </button>
         <h1>User information</h1>
@@ -11,20 +11,20 @@
     <mat-card-content>
       @if (user) {
       <div fxLayout="column" fxLayoutAlign="start center">
-        <p data-cy="name_me">Name: {{ user.firstName }} {{ user.lastName | uppercase }}</p>
-        <p data-cy="email_me">Email: {{ user.email }}</p>
-        @if (user.admin) {<p class="my2" data-cy="admin_me">You are admin</p>}
+        <p data-cy="name_me" id="name_me">Name: {{ user.firstName }} {{ user.lastName | uppercase }}</p>
+        <p data-cy="email_me" id="email_me">Email: {{ user.email }}</p>
+        @if (user.admin) {<p class="my2" data-cy="admin_me" id="admin_me">You are admin</p>}
         <div fxLayout="column" class="my2" fxLayoutAlign="center center">
           <p>Delete my account:</p>
-          <button mat-raised-button color="warn" (click)="delete()" data-cy="deleteBtn_me">
+          <button mat-raised-button color="warn" (click)="delete()" data-cy="deleteBtn_me" id="deleteBtn_me">
             <mat-icon>delete</mat-icon>
             <span class="ml1">Delete</span>
           </button>
         </div>
         <div fxLayoutAlign="space-between center" class="p2 w100">
 
-          <p data-cy="createdAt_me"><i>Create at: </i> {{ user.createdAt | date: 'longDate'}}</p>
-          <p data-cy="updateAt_me"><i>Last update: </i> {{ user.updatedAt| date: 'longDate'}}</p>
+          <p data-cy="createdAt_me" id="createdAt_me"><i>Create at: </i> {{ user.createdAt | date: 'longDate'}}</p>
+          <p data-cy="updateAt_me" id="updateAt_me"><i>Last update: </i> {{ user.updatedAt| date: 'longDate'}}</p>
         </div>
       </div>
     }

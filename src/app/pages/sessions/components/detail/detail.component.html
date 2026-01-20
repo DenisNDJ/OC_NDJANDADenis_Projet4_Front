@@ -4,26 +4,26 @@
     <mat-card-title>
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <div fxLayout="row" fxLayoutAlign="start center">
-          <button mat-icon-button (click)="back()">
+          <button mat-icon-button (click)="back()" id="backBtn_detail">
             <mat-icon>arrow_back</mat-icon>
           </button>
-          <h1 data-cy="sessionName_detail">{{session.name | titlecase}}</h1>
+          <h1 data-cy="sessionName_detail" id="sessionName_detail">{{session.name | titlecase}}</h1>
         </div>
         <div>
           @if (isAdmin) {
-          <button mat-raised-button color="warn" (click)="delete()" data-cy="sessionDeleteBtn_detail">
+          <button mat-raised-button color="warn" (click)="delete()" data-cy="sessionDeleteBtn_detail" id="sessionDeleteBtn_detail">
             <mat-icon>delete</mat-icon>
             <span class="ml1">Delete</span>
           </button>}
           @if (!isAdmin) {
           <div>
             @if (!isParticipate) {
-            <button mat-raised-button color="primary" (click)="participate()" data-cy="sessionParticipateBtn_detail">
+            <button mat-raised-button color="primary" (click)="participate()" data-cy="sessionParticipateBtn_detail" id="sessionParticipateBtn_detail">
               <mat-icon>person_add</mat-icon>
               <span class="ml1">Participate</span>
             </button>}
             @if (isParticipate) {
-            <button mat-raised-button color="warn" (click)="unParticipate()" data-cy="sessionUnparticipateBtn_detail">
+            <button mat-raised-button color="warn" (click)="unParticipate()" data-cy="sessionUnparticipateBtn_detail" id="sessionUnparticipateBtn_detail">
               <mat-icon>person_remove</mat-icon>
               <span class="ml1">Do not participate</span>
             </button>
@@ -38,7 +38,7 @@
         <mat-icon>
           people
         </mat-icon>
-        <span class="ml1" data-cy="sessionTeacher_detail">{{ teacher.firstName }} {{ teacher.lastName | uppercase }}</span>
+        <span class="ml1" data-cy="sessionTeacher_detail" id="sessionTeacher_detail">{{ teacher.firstName }} {{ teacher.lastName | uppercase }}</span>
       </div>
     </mat-card-subtitle>
   }
@@ -51,23 +51,23 @@
           <mat-icon>
             group
           </mat-icon>
-          <span class="ml1" data-cy="sessionNbrParticipant_detail">{{ session.users.length }} attendees</span>
+          <span class="ml1" data-cy="sessionNbrParticipant_detail" id="sessionNbrParticipant_detail">{{ session.users.length }} attendees</span>
         </div>
         <div fxLayoutAlign="start center">
           <mat-icon>
             calendar_month
           </mat-icon>
-          <span class="ml1" data-cy="sessionDate_detail">{{ session.date | date: 'longDate'}}</span>
+          <span class="ml1" data-cy="sessionDate_detail" id="sessionDate_detail">{{ session.date | date: 'longDate'}}</span>
         </div>
       </div>
-      <div class="description" data-cy="sessionDescription_detail">
+      <div class="description" data-cy="sessionDescription_detail" id="sessionDescription_detail">
         <p>Description:</p>
         {{ session.description }}
         <br>
       </div>
       <div class="date" class="my2" fxLayout="row" fxLayoutAlign="space-between center">
-        <div class="created" data-cy="sessionCreatedAt_detail"><i>Create at: </i> {{ session.createdAt| date: 'longDate'}}</div>
-        <div class="updated" data-cy="sessionUpdatedAt_detail"><i>Last update: </i> {{ session.updatedAt| date: 'longDate'}}</div>
+        <div class="created" data-cy="sessionCreatedAt_detail" id="sessionCreatedAt_detail"><i>Create at: </i> {{ session.createdAt| date: 'longDate'}}</div>
+        <div class="updated" data-cy="sessionUpdatedAt_detail" id="sessionUpdatedAt_detail"><i>Last update: </i> {{ session.updatedAt| date: 'longDate'}}</div>
       </div>
     </mat-card-content>
   </mat-card>}

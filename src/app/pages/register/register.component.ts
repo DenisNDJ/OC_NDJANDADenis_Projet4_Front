@@ -6,7 +6,6 @@ import { RegisterRequest } from '../../core/models/registerRequest.interface';
 import { MaterialModule } from "../../shared/material.module";
 import { CommonModule } from "@angular/common";
 import { Subject } from 'rxjs/internal/Subject';
-import { takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-register',
