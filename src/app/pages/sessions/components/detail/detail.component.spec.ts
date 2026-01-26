@@ -17,6 +17,7 @@ import { TeacherService } from 'src/app/core/service/teacher.service';
 describe('DetailComponent', () => {
   let component: DetailComponent;
   let fixture: ComponentFixture<DetailComponent>;
+  
   let mockRouter: Router;
 
   const mockSnackBar = {
