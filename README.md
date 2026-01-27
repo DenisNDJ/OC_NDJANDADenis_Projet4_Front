@@ -37,6 +37,12 @@ Report is available here:
 
 > front/coverage/lcov-report/index.html
 
+Test code coverage:
+
+The code coverage is +80% on all categories. (see below)
+
+![alt text](image-1.png)
+
 #### Unitary test
 
 Launching test:
