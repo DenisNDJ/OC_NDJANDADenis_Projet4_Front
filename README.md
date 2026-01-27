@@ -51,6 +51,10 @@ for following change:
 
 #### Jest Test Coverage
 
+Launching coverage:
+
+> npm run test:coverage
+
 File | Statements | Branch | Functions | Line |
 --- | --- | --- | --- |--- 
 Coverage | 98.25% | 100% | 92.75% | 99.23% 
