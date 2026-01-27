@@ -53,6 +53,6 @@ for following change:
 
 File | Statements | Branch | Functions | Line |
 --- | --- | --- | --- |--- 
-Coverage | 98.25 | 100% | 92.75 | 99.23 
+Coverage | 98.25% | 100% | 92.75% | 99.23% 
 
 ![alt text](image.png)
