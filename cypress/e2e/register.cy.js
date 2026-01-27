@@ -6,14 +6,14 @@ describe('Register tests', () => {
 
     it('Check missing or wrong input', () => {
         cy.get('button[type=submit]').should('be.disabled');
-        cy.get('#mat-input-0').type('denis');
+        cy.get('[data-cy="firstName_register"]').type('denis');
         cy.get('button[type=submit]').should('be.disabled');
-        cy.get('#mat-input-1').type('ndjanda');
+        cy.get('[data-cy="lastName_register"]').type('ndjanda');
         cy.get('button[type=submit]').should('be.disabled');
-        cy.get('#mat-input-2').type('notEmail');
-        cy.get('#mat-input-2').should('have.class', 'ng-invalid');
+        cy.get('[data-cy="email_register"]').type('notEmail');
+        cy.get('[data-cy="email_register"]').should('have.class', 'ng-invalid');
         cy.get('button[type=submit]').should('be.disabled');
-        cy.get('#mat-input-3').type('password');
+        cy.get('[data-cy="password_register"]').type('password');
         cy.get('button[type=submit]').should('be.disabled');
     })
 
@@ -29,10 +29,10 @@ describe('Register tests', () => {
         }
         ).as('loginFailedRequest');
 
-        cy.get('#mat-input-0').type('denis');
-        cy.get('#mat-input-1').type('ndjanda');
-        cy.get('#mat-input-2').type('denis@gmail.com');
-        cy.get('#mat-input-3').type('password');
+        cy.get('[data-cy="firstName_register"]').type('denis');
+        cy.get('[data-cy="lastName_register"]').type('ndjanda');
+        cy.get('[data-cy="email_register"]').type('denis@gmail.com');
+        cy.get('[data-cy="password_register"]').type('password');
         cy.get('button[type=submit]').click();
         cy.location('pathname').should('include', 'login');
     })
@@ -49,10 +49,10 @@ describe('Register tests', () => {
         }
         ).as('loginFailedRequest');
         
-        cy.get('#mat-input-0').type('denis');
-        cy.get('#mat-input-1').type('ndjanda');
-        cy.get('#mat-input-2').type('denis@gmail.com');
-        cy.get('#mat-input-3').type('password');
+        cy.get('[data-cy="firstName_register"]').type('denis');
+        cy.get('[data-cy="lastName_register"]').type('ndjanda');
+        cy.get('[data-cy="email_register"]').type('denis@gmail.com');
+        cy.get('[data-cy="password_register"]').type('password');
         cy.get('button[type=submit]').click();
         cy.get('span.error').should('be.visible');
         cy.get('span.error').should('have.text', 'An error occurred');

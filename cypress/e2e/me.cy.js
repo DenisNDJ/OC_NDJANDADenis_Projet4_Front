@@ -30,8 +30,8 @@ describe('Sessions tests', () => {
         },).as("userRequest");
 
         cy.visit('http://localhost:4200/login');
-        cy.get('#mat-input-0').type('yoga@studio.com');
-        cy.get('#mat-input-1').type('test!1234');
+        cy.get('[data-cy="emailInput_login"]').type('yoga@studio.com');
+        cy.get('[data-cy="passwordInput_login"]').type('test!1234');
         cy.get('button[type=submit]').click();
     });
 

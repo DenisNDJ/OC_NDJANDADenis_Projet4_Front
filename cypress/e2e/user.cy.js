@@ -45,13 +45,13 @@ describe('Users tests', () => {
         },);
 
         cy.visit('http://localhost:4200/login')
-        cy.get('#mat-input-0').clear();
-        cy.get('#mat-input-1').clear();
+        cy.get('[data-cy="emailInput_login"]').clear();
+        cy.get('[data-cy="passwordInput_login"]').clear();
   });
 
   it('Check login and participate button', () => {
-    cy.get('#mat-input-0').type('denis@studio.com');
-    cy.get('#mat-input-1').type('test!1234');
+    cy.get('[data-cy="emailInput_login"]').type('denis@studio.com');
+    cy.get('[data-cy="passwordInput_login"]').type('test!1234');
     cy.get('button[type=submit]').click();
 
     cy.location('pathname').should('include', 'sessions');
@@ -60,8 +60,8 @@ describe('Users tests', () => {
   })
 
     it('Check login and unparticipate button', () => {
-    cy.get('#mat-input-0').type('denis@studio.com');
-    cy.get('#mat-input-1').type('test!1234');
+    cy.get('[data-cy="emailInput_login"]').type('denis@studio.com');
+    cy.get('[data-cy="passwordInput_login"]').type('test!1234');
     cy.get('button[type=submit]').click();
 
     cy.location('pathname').should('include', 'sessions');
